@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CerpenController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,9 +17,7 @@ Route::middleware(['auth'])->group(function () {
         return Inertia::render('home');
     })->name('home');
 
-    Route::get('cerpen', function () {
-        return Inertia::render('cerpen/index');
-    })->name('cerpen.index');
+    Route::get('cerpen', [CerpenController::class, 'index'])->name('cerpen.index');
 });
 
 require __DIR__.'/settings.php';
