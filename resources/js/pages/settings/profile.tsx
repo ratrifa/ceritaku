@@ -40,24 +40,24 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
 
             <SettingsLayout>
                 <div className="space-y-6">
-                    <HeadingSmall title="Profile information" description="Update your name and email address" />
+                    <HeadingSmall title="Profile information" description="Update your name, username, and email address" />
 
                     <form onSubmit={submit} className="space-y-6">
-                            <div className="grid gap-2">
-                                <Label htmlFor="name">Name</Label>
+                        <div className="grid gap-2">
+                            <Label htmlFor="name">Name</Label>
 
-                                <Input
-                                    id="name"
-                                    className="mt-1 block w-full"
-                                    value={data.name}
-                                    onChange={(e) => setData('name', e.target.value)}
-                                    required
-                                    autoComplete="name"
-                                    placeholder="Full name"
-                                />
+                            <Input
+                                id="name"
+                                className="mt-1 block w-full"
+                                value={data.name}
+                                onChange={(e) => setData('name', e.target.value)}
+                                required
+                                autoComplete="name"
+                                placeholder="Full name"
+                            />
 
-                                <InputError className="mt-2" message={errors.name} />
-                            </div>
+                            <InputError className="mt-2" message={errors.name} />
+                        </div>
                         <div className="grid gap-2">
                             <Label htmlFor="username">Username</Label>
 
@@ -65,11 +65,13 @@ export default function Profile({ mustVerifyEmail, status }: { mustVerifyEmail: 
                                 id="username"
                                 className="mt-1 block w-full"
                                 value={data.username}
-                                onChange={(e) => setData('username', e.target.value)}
+                                onChange={(e) => setData('username', e.target.value.toLowerCase())}
                                 required
                                 autoComplete="username"
                                 placeholder="Username"
                             />
+
+                            <p className="text-muted-foreground text-xs">Gunakan huruf kecil, angka, dash (-), atau underscore (_).</p>
 
                             <InputError className="mt-2" message={errors.username} />
                         </div>

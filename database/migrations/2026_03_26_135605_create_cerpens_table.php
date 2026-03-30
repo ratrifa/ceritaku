@@ -17,7 +17,6 @@ return new class extends Migration {
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('content');
-            $table->string('cover_image')->nullable();
 
             $table->enum('status', ['draft', 'published'])->default('draft');
             $table->unsignedBigInteger('views_count')->default(0);

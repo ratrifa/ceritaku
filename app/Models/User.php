@@ -48,9 +48,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function stories()
+    public function cerpens()
     {
         return $this->hasMany(Cerpen::class);
+    }
+
+    public function stories()
+    {
+        return $this->cerpens();
     }
 
     public function comments()

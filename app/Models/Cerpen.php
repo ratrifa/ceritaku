@@ -11,7 +11,6 @@ class Cerpen extends Model
         'title',
         'slug',
         'content',
-        'cover_image',
         'status',
     ];
 
@@ -39,6 +38,6 @@ class Cerpen extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'tag_cerpens', 'cerpen_id', 'tag_id');
     }
 }
