@@ -230,7 +230,7 @@ export default function Home() {
                     {feedItems.map((cerpen) => (
                         <Card
                             key={cerpen.id}
-                            className="h-full cursor-pointer transition hover:ring-foreground/20"
+                            className="hover:ring-foreground/20 h-full cursor-pointer transition"
                             role="button"
                             tabIndex={0}
                             onClick={() => router.visit(route('cerpen.show', cerpen.slug))}

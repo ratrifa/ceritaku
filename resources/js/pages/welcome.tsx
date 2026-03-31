@@ -23,7 +23,7 @@ type LandingProps = SharedData & {
 
 function HeroSection({ isAuthenticated }: { isAuthenticated: boolean }) {
     return (
-        <section className="relative overflow-hidden rounded-3xl border bg-card px-6 py-14 md:px-12 md:py-20">
+        <section className="bg-card relative overflow-hidden rounded-3xl border px-6 py-14 md:px-12 md:py-20">
             <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-rose-200/30 blur-3xl" />
 
@@ -32,9 +32,7 @@ function HeroSection({ isAuthenticated }: { isAuthenticated: boolean }) {
                     CeritaKu for Writers & Readers
                 </Badge>
 
-                <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">
-                    Tuangkan Ceritamu, Temukan Dunia Baru
-                </h1>
+                <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">Tuangkan Ceritamu, Temukan Dunia Baru</h1>
 
                 <p className="text-muted-foreground max-w-2xl text-base md:text-lg">
                     Platform untuk menulis, membaca, dan berbagi cerpen dengan komunitas.
@@ -127,35 +125,36 @@ function StoryPreview({ stories, isAuthenticated }: { stories: LandingStory[]; i
                     const targetHref = isAuthenticated ? route('cerpen.show', story.slug) : route('login');
 
                     return (
-                    <Card
-                        key={story.id}
-                        className="h-full cursor-pointer transition hover:ring-foreground/20"
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => router.visit(targetHref)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                router.visit(targetHref);
-                            }
-                        }}
-                    >
-                        <CardHeader className="space-y-3">
-                            <CardTitle className="line-clamp-2 text-lg font-bold">{story.title}</CardTitle>
-                            <CardDescription>
-                                Oleh {story.user.name} @{story.user.username ?? 'writer'}
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                            <p className="story-content text-muted-foreground line-clamp-4 text-sm">{story.content}</p>
-                            <div className="flex items-center">
-                                <Badge variant="outline" className="gap-1">
-                                    <Heart className="size-3" /> {story.likes_count}
-                                </Badge>
-                            </div>
-                        </CardContent>
-                    </Card>
-                );})}
+                        <Card
+                            key={story.id}
+                            className="hover:ring-foreground/20 h-full cursor-pointer transition"
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => router.visit(targetHref)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    router.visit(targetHref);
+                                }
+                            }}
+                        >
+                            <CardHeader className="space-y-3">
+                                <CardTitle className="line-clamp-2 text-lg font-bold">{story.title}</CardTitle>
+                                <CardDescription>
+                                    Oleh {story.user.name} @{story.user.username ?? 'writer'}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="space-y-3">
+                                <p className="story-content text-muted-foreground line-clamp-4 text-sm">{story.content}</p>
+                                <div className="flex items-center">
+                                    <Badge variant="outline" className="gap-1">
+                                        <Heart className="size-3" /> {story.likes_count}
+                                    </Badge>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    );
+                })}
             </div>
         </section>
     );
@@ -163,7 +162,7 @@ function StoryPreview({ stories, isAuthenticated }: { stories: LandingStory[]; i
 
 function CTASection() {
     return (
-        <section className="rounded-3xl border bg-muted/50 px-6 py-12 text-center md:px-10">
+        <section className="bg-muted/50 rounded-3xl border px-6 py-12 text-center md:px-10">
             <div className="mx-auto max-w-2xl space-y-4">
                 <h2 className="font-heading text-3xl font-bold md:text-4xl">Mulai perjalanan ceritamu hari ini</h2>
                 <p className="text-muted-foreground">Gabung dengan pembaca dan penulis lain, bagikan ceritamu dalam hitungan menit.</p>
@@ -202,7 +201,7 @@ export default function Welcome() {
             <Head title="CeritaKu" />
 
             <div className="bg-background text-foreground min-h-screen">
-                <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur">
+                <header className="bg-background/80 sticky top-0 z-30 border-b backdrop-blur">
                     <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
                         <Link href={route('landing')} className="font-heading flex items-center gap-2 text-lg font-bold">
                             <BookOpenText className="size-5" />
