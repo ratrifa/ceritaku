@@ -290,6 +290,8 @@ class CerpenController extends Controller
 
     public function toggleLike(Request $request, Cerpen $cerpen)
     {
+        $this->ensureCanInteractWithCerpen($request, $cerpen);
+
         $like = Likes::query()
             ->where('user_id', $request->user()->id)
             ->where('cerpen_id', $cerpen->id)
@@ -309,6 +311,8 @@ class CerpenController extends Controller
 
     public function toggleBookmark(Request $request, Cerpen $cerpen)
     {
+        $this->ensureCanInteractWithCerpen($request, $cerpen);
+
         $bookmark = Bookmark::query()
             ->where('user_id', $request->user()->id)
             ->where('cerpen_id', $cerpen->id)
@@ -328,6 +332,8 @@ class CerpenController extends Controller
 
     public function storeComment(Request $request, Cerpen $cerpen)
     {
+        $this->ensureCanInteractWithCerpen($request, $cerpen);
+
         $validated = $request->validate([
             'content' => ['required', 'string', 'min:2', 'max:2000'],
             'parent_id' => ['nullable', 'integer', Rule::exists('comments', 'id')],
@@ -356,6 +362,8 @@ class CerpenController extends Controller
 
     public function destroyComment(Request $request, Cerpen $cerpen, Comments $comment)
     {
+        $this->ensureCanInteractWithCerpen($request, $cerpen);
+
         if ($comment->cerpen_id !== $cerpen->id) {
             abort(404);
         }
@@ -406,5 +414,12 @@ class CerpenController extends Controller
         });
 
         $cerpen->tags()->sync($tagIds->all());
+    }
+
+    private function ensureCanInteractWithCerpen(Request $request, Cerpen $cerpen): void
+    {
+        if (! Gate::forUser($request->user())->allows('view', $cerpen)) {
+            abort(404);
+        }
     }
 }
