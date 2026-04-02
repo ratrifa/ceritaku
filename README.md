@@ -323,6 +323,56 @@ Proyek menggunakan **Pest PHP** untuk testing:
 php artisan test
 
 # Jalankan test file spesifik
+php artisan test tests/Feature/CerpenTest.php
+
+# Dengan code coverage
+php artisan test --coverage
+```
+
+## 🚀 Deployment (Vercel)
+
+### Prerequisites
+- Vercel account connected to GitHub
+- Production database (MySQL/PostgreSQL)
+- APP_KEY already generated
+
+### Setup Steps
+
+1. **Connect Repository to Vercel**
+   - Go to https://vercel.com/new
+   - Select this GitHub repository
+   - Deploy akan auto-trigger
+
+2. **Set Environment Variables**
+   - Go to Project Settings → Environment Variables
+   - Add all variables dari `.env.production.example`
+   - Required variables:
+     ```
+     APP_KEY, APP_NAME, APP_ENV, APP_DEBUG, APP_URL
+     CACHE_STORE, SESSION_DRIVER, LOG_CHANNEL
+     DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+     ```
+   - Refer to `VERCEL_ENV_SETUP.md` untuk step-by-step instructions
+
+3. **Verify Deployment**
+   - Check Build Logs → pastikan `npm run build` sukses
+   - Check Runtime Logs → pastikan tidak ada error 500
+   - Test: https://ceritaku-j5z5.vercel.app
+
+### Troubleshooting
+
+Jika error 500:
+1. Verify APP_KEY di environment variables
+2. Check database connectivity dari Vercel logs
+3. Ensure CACHE_STORE=array (bukan database)
+4. Check LOG_CHANNEL=stderr untuk detailed logs
+
+### Important Notes
+
+- `vendor/` folder harus di-commit (tidak exclude dari git)
+- Vite build output di-commit ke `public/build/`
+- Database migrations harus sudah di-run lokal sebelum deploy
+- Jangan commit `.env` file, gunakan Vercel Environment Variables
 php artisan test tests/Feature/CerpenControllerTest.php
 
 # Dengan coverage report
