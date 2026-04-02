@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    {
+        "src": "/build/(.*)",
+        "dest": "/public/build/$1.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+    "public": true,
+    "buildCommand": "vite build",
+    "outputDirectory": "public",
+    "env": {
+        "ASSET_URL": "https://ceritaku-ratrifa.vercel.app",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://ceritaku-ratrifa.vercel.app",
+        "APP_KEY": "base64:bGumfr6w3W3jkO/JNZfRG3dk8Pi4C8eR4FZn7F01GR0=",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "gt8-yp.h.filess.io",
+        "DB_PORT": "61002",
+        "DB_DATABASE": "ceritaku_sometimeon",
+        "DB_USERNAME": "ceritaku_sometimeon",
+        "DB_PASSWORD": "f40a903b2419886e49385b33dffa93a3222c7af8"
+    }
+}
