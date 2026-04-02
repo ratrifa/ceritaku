@@ -7,12 +7,15 @@
 ## 🏃 START HERE (Choose One):
 
 ### Option 1: I want to deploy NOW (5 minutes)
+
 → Read: **[DEPLOY_NOW.md](DEPLOY_NOW.md)** ⭐ **START HERE**
 
 ### Option 2: I want quick overview
+
 → Read: **[QUICK_START.md](QUICK_START.md)**
 
 ### Option 3: I want complete checklist
+
 → Read: **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)**
 
 ---
@@ -20,25 +23,28 @@
 ## 📚 All Documentation Files:
 
 ### Essential (READ THESE):
-| File | Purpose | Time |
-|------|---------|------|
-| **[DEPLOY_NOW.md](DEPLOY_NOW.md)** | ⭐ Final deployment instructions | 2 min |
-| **[QUICK_START.md](QUICK_START.md)** | Quick reference with env vars | 2 min |
-| **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** | Full verification checklist | 5 min |
+
+| File                                                   | Purpose                          | Time  |
+| ------------------------------------------------------ | -------------------------------- | ----- |
+| **[DEPLOY_NOW.md](DEPLOY_NOW.md)**                     | ⭐ Final deployment instructions | 2 min |
+| **[QUICK_START.md](QUICK_START.md)**                   | Quick reference with env vars    | 2 min |
+| **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** | Full verification checklist      | 5 min |
 
 ### Reference (READ IF NEEDED):
-| File | Purpose |
-|------|---------|
-| **[VERCEL_ENV_SETUP.md](VERCEL_ENV_SETUP.md)** | Step-by-step environment variable setup |
-| **[VERCEL_ENV_VARS.md](VERCEL_ENV_VARS.md)** | Complete environment variables reference |
-| **[.env.production.example](.env.production.example)** | Production environment template |
-| **[README.md](README.md#-deployment-vercel)** | Deployment section in README |
+
+| File                                                   | Purpose                                  |
+| ------------------------------------------------------ | ---------------------------------------- |
+| **[VERCEL_ENV_SETUP.md](VERCEL_ENV_SETUP.md)**         | Step-by-step environment variable setup  |
+| **[VERCEL_ENV_VARS.md](VERCEL_ENV_VARS.md)**           | Complete environment variables reference |
+| **[.env.production.example](.env.production.example)** | Production environment template          |
+| **[README.md](README.md#-deployment-vercel)**          | Deployment section in README             |
 
 ### Tools (FOR VERIFICATION):
-| File | Purpose |
-|------|---------|
-| **[verify-vercel-deployment.bat](verify-vercel-deployment.bat)** | Windows verification script |
-| **[verify-vercel-deployment.sh](verify-vercel-deployment.sh)** | Linux/Mac verification script |
+
+| File                                                             | Purpose                       |
+| ---------------------------------------------------------------- | ----------------------------- |
+| **[verify-vercel-deployment.bat](verify-vercel-deployment.bat)** | Windows verification script   |
+| **[verify-vercel-deployment.sh](verify-vercel-deployment.sh)**   | Linux/Mac verification script |
 
 ---
 
@@ -58,17 +64,19 @@
 **Just 3 simple steps:**
 
 1. **Set Environment Variables** (5 min)
-   - Open: https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/environment-variables
-   - Copy 15 variables from DEPLOY_NOW.md
-   - Save
+
+    - Open: https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/environment-variables
+    - Copy 15 variables from DEPLOY_NOW.md
+    - Save
 
 2. **Wait for Deploy** (2-3 min)
-   - Vercel auto-deploys after env vars saved
-   - Check: https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/deployments
+
+    - Vercel auto-deploys after env vars saved
+    - Check: https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/deployments
 
 3. **Test App** (1 min)
-   - Visit: https://ceritaku-j5z5.vercel.app
-   - Should see homepage without error 500
+    - Visit: https://ceritaku-j5z5.vercel.app
+    - Should see homepage without error 500
 
 **Total time: ~10 minutes** ⏱️
 
@@ -78,7 +86,7 @@
 
 ```
 Want to deploy?
-├─ Yes, do it NOW! 
+├─ Yes, do it NOW!
 │  └─ → Open DEPLOY_NOW.md ⭐
 ├─ Yes, but need quick reference
 │  └─ → Open QUICK_START.md
@@ -105,6 +113,7 @@ Want to deploy?
 ## 📞 Need Help?
 
 **Check these in order:**
+
 1. DEPLOY_NOW.md - Troubleshooting section
 2. DEPLOYMENT_CHECKLIST.md - Troubleshooting section
 3. Vercel Dashboard Logs - Runtime logs
@@ -118,5 +127,5 @@ Pick a doc above and start! 🚀
 
 ---
 
-*Last updated: April 2, 2026*  
-*All code changes complete | All documentation complete | Ready for user action*
+_Last updated: April 2, 2026_  
+_All code changes complete | All documentation complete | Ready for user action_

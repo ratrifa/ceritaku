@@ -27,6 +27,7 @@ URL: https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/envi
 Copy-paste from `VERCEL_ENV_SETUP.md` or use `.env.production.example` as template:
 
 **Critical Variables:**
+
 - APP_KEY (from .env, starts with "base64:")
 - APP_ENV=production
 - APP_DEBUG=false
@@ -42,16 +43,19 @@ After setting variables, Vercel automatically triggers deployment (2-3 minutes)
 ### Step 3: Verify Deployment
 
 **Check Build Success:**
+
 - Go to Vercel Dashboard → Deployments → Latest deployment
 - Click Build & Logs
 - Verify `npm run build` completed without errors
 
 **Check Runtime Success:**
+
 - Go to Runtime Logs
 - No error traces = Success ✅
 - If error 500: Check logs for stack trace and debug
 
 **Test Application:**
+
 ```
 https://ceritaku-j5z5.vercel.app
 ```
@@ -61,12 +65,14 @@ https://ceritaku-j5z5.vercel.app
 ### Error 500 on homepage
 
 **Most likely causes (in order):**
+
 1. APP_KEY not set or invalid → Set in Environment Variables
 2. Database connection error → Verify DB_HOST, DB_PORT, credentials
 3. Cache driver issue → Must be "array" not "database"
 4. Missing environment variable → Check all variables in VERCEL_ENV_SETUP.md
 
 **Debug Steps:**
+
 1. Check Vercel Runtime Logs for full stack trace
 2. Verify all environment variables are set (no blank values)
 3. Test database connection locally: `php test-db.php` (removed, but replicable)
@@ -75,10 +81,12 @@ https://ceritaku-j5z5.vercel.app
 ### Build fails
 
 **Most likely causes:**
+
 1. `npm run build` failure → Check if node_modules properly installed
 2. PHP version mismatch → vercel-php@0.9.0 for PHP 8.2+
 
 **Debug Steps:**
+
 1. Check Vercel Build Logs (not Runtime Logs)
 2. Redeploy by pushing new commit to master branch
 
@@ -109,16 +117,14 @@ ceritaku/
 ## Next Steps After Deployment
 
 1. Setup custom domain (if needed)
-   - Go to Vercel Dashboard → Settings → Domains
-   
+    - Go to Vercel Dashboard → Settings → Domains
 2. Setup CI/CD
-   - GitHub → Settings → Define branch deployments
-   - Set production branch to "master"
-   
+    - GitHub → Settings → Define branch deployments
+    - Set production branch to "master"
 3. Monitor & Logging
-   - Check Vercel logs regularly
-   - Setup error tracking if needed
-   - Monitor database query performance
+    - Check Vercel logs regularly
+    - Setup error tracking if needed
+    - Monitor database query performance
 
 ## Important Notes
 

@@ -9,6 +9,7 @@
 ### Copy-paste these variables one by one:
 
 **APP Configuration:**
+
 ```
 Key: APP_NAME
 Value: CeritaKu
@@ -40,6 +41,7 @@ Value: https://ceritaku-j5z5.vercel.app
 ```
 
 **Cache & Session Configuration:**
+
 ```
 Key: CACHE_STORE
 Value: array
@@ -51,6 +53,7 @@ Value: cookie
 ```
 
 **Database Configuration:**
+
 ```
 Key: DB_CONNECTION
 Value: mysql
@@ -82,6 +85,7 @@ Value: f40a903b2419886e49385b33dffa93a3222c7af8
 ```
 
 **Logging Configuration:**
+
 ```
 Key: LOG_CHANNEL
 Value: stderr
@@ -93,6 +97,7 @@ Value: debug
 ```
 
 **Other:**
+
 ```
 Key: BCRYPT_ROUNDS
 Value: 12
@@ -104,8 +109,8 @@ Value: 12
 2. Wait 2-3 minutes untuk deployment selesai
 3. Test: https://ceritaku-j5z5.vercel.app
 4. Jika error 500:
-   - Check Vercel Deployments → Logs → Runtime Logs
-   - Cari error trace untuk debugging lebih lanjut
+    - Check Vercel Deployments → Logs → Runtime Logs
+    - Cari error trace untuk debugging lebih lanjut
 
 ## Important Notes
 

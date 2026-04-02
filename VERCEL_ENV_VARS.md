@@ -3,6 +3,7 @@
 Untuk Vercel Production, set Environment Variables berikut di Vercel Dashboard:
 
 ## Critical Variables
+
 ```
 APP_NAME=CeritaKu
 APP_ENV=production
@@ -31,6 +32,7 @@ BCRYPT_ROUNDS=12
 ```
 
 ## Important Notes
+
 - `APP_KEY` sudah di-generate, jangan ubah
 - `CACHE_STORE` HARUS `array` untuk serverless (bukan `database`)
 - `SESSION_DRIVER` `cookie` lebih cocok daripada `file` di serverless
@@ -38,6 +40,7 @@ BCRYPT_ROUNDS=12
 - Endpoint database accessible dari Vercel ✅ (sudah verified)
 
 ## Validation
+
 1. Cek Vercel Build Logs → apakah `npm run build` sukses?
 2. Cek Vercel Runtime Logs → apakah ada error middleware/database?
 3. Test GET `/` → harus return HTML page, bukan 500

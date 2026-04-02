@@ -16,6 +16,7 @@ Platform storytelling modern untuk berbagi cerpen (cerita pendek) dengan komunit
 ## 🛠️ Tech Stack
 
 ### Backend
+
 - **PHP 8.2+** - Bahasa pemrograman
 - **Laravel 12** - Framework web
 - **Inertia.js** - Server-side rendering bridge
@@ -23,6 +24,7 @@ Platform storytelling modern untuk berbagi cerpen (cerita pendek) dengan komunit
 - **Ziggy** - Route helper untuk JavaScript
 
 ### Frontend
+
 - **React 19** - UI library
 - **TypeScript** - Type safety
 - **Tailwind CSS 4** - Styling
@@ -32,6 +34,7 @@ Platform storytelling modern untuk berbagi cerpen (cerita pendek) dengan komunit
 - **Vite** - Frontend build tool
 
 ### Development & Testing
+
 - **Pest PHP** - Modern testing framework
 - **Laravel Sail** - Docker setup
 - **Prettier** - Code formatter
@@ -39,6 +42,7 @@ Platform storytelling modern untuk berbagi cerpen (cerita pendek) dengan komunit
 - **Faker** - Data generation
 
 ### Tools
+
 - **Composer** - PHP dependency management
 - **npm** - Node.js package management
 - **Laravel Pint** - PHP code style fixer
@@ -55,22 +59,26 @@ Platform storytelling modern untuk berbagi cerpen (cerita pendek) dengan komunit
 ## 🚀 Cara Instalasi
 
 ### 1. Clone Repository
+
 ```bash
 git clone <repository-url>
 cd ceritaku
 ```
 
 ### 2. Install PHP Dependencies
+
 ```bash
 composer install
 ```
 
 ### 3. Install Node Dependencies
+
 ```bash
 npm install
 ```
 
 ### 4. Setup Environment
+
 ```bash
 # Copy .env.example ke .env
 cp .env.example .env
@@ -83,6 +91,7 @@ touch database/database.sqlite
 ```
 
 ### 5. Database Migration & Seeding
+
 ```bash
 # Jalankan migrasi
 php artisan migrate
@@ -92,6 +101,7 @@ php artisan db:seed --class=DemoContentSeeder
 ```
 
 ### 6. Build Frontend Assets
+
 ```bash
 # Development
 npm run dev
@@ -103,6 +113,7 @@ npm run build
 ## 🎯 Perintah Harian
 
 ### Development Server
+
 ```bash
 # Cara 1: Jalankan semuanya (server Laravel + queue + Vite)
 composer run dev
@@ -114,6 +125,7 @@ php artisan queue:listen  # Queue listener
 ```
 
 ### Database
+
 ```bash
 # Run migrations
 php artisan migrate
@@ -130,6 +142,7 @@ php artisan migrate:reset
 ```
 
 ### Code Quality
+
 ```bash
 # Format dengan Prettier (JavaScript/TypeScript)
 npm run format
@@ -145,6 +158,7 @@ php artisan pint
 ```
 
 ### Testing
+
 ```bash
 # Jalankan semua tests
 php artisan test
@@ -157,6 +171,7 @@ php artisan test tests/Feature/CerpenControllerTest.php
 ```
 
 ### Tinker (REPL)
+
 ```bash
 # Akses PHP REPL untuk debugging
 php artisan tinker
@@ -167,6 +182,7 @@ php artisan tinker
 ```
 
 ### Build & Deployment
+
 ```bash
 # Build frontend untuk production
 npm run build
@@ -215,6 +231,7 @@ ceritaku/
 ## 🗄️ Database Schema
 
 ### Core Models
+
 - **User** - Profil pengguna dan otentikasi
 - **Cerpen** - Artikel cerita
 - **Comments** - Komentar pada cerpen (support nested)
@@ -226,14 +243,16 @@ ceritaku/
 
 ## 🔐 Autentikasi & Authorization
 
-Project ini menggunakan Laravel's default authentication system. 
+Project ini menggunakan Laravel's default authentication system.
 
 ### Authorization
+
 - **Policies**: `CerpenPolicy` dan `CommentsPolicy`
-  - User hanya bisa edit/delete cerpen mereka sendiri
-  - User hanya bisa delete komentar mereka sendiri atau penulis cerpen
+    - User hanya bisa edit/delete cerpen mereka sendiri
+    - User hanya bisa delete komentar mereka sendiri atau penulis cerpen
 
 ### Routes yang Dilindungi
+
 - Dashboard, Home Feed, Reading List
 - CRUD Cerpen
 - Like, Bookmark, Comments
@@ -242,6 +261,7 @@ Project ini menggunakan Laravel's default authentication system.
 ## 🌐 API Routes
 
 ### Public Routes
+
 ```
 GET    /                              # Landing page
 GET    /cerpen/{id}                   # View cerpen detail
@@ -249,6 +269,7 @@ GET    /@{username}                   # Public profile
 ```
 
 ### Protected Routes (Require Authentication)
+
 ```
 GET    /home                          # Home feed
 GET    /reading-list                  # Reading list
@@ -272,6 +293,7 @@ php artisan db:seed --class=DemoContentSeeder
 ```
 
 Ini akan membuat:
+
 - **8 Demo Users** dengan password `password`
 - **80 Cerpen** (8 per user, 8 published per user)
 - **10 Tag Categories**
@@ -280,6 +302,7 @@ Ini akan membuat:
 - **Comments & Replies** (nested comments)
 
 ### Test User
+
 - Email: `test@example.com`
 - Password: `password`
 
@@ -332,6 +355,7 @@ php artisan test --coverage
 ## 🚀 Deployment (Vercel)
 
 ### Prerequisites
+
 - Vercel account connected to GitHub
 - Production database (MySQL/PostgreSQL)
 - APP_KEY already generated
@@ -339,29 +363,32 @@ php artisan test --coverage
 ### Setup Steps
 
 1. **Connect Repository to Vercel**
-   - Go to https://vercel.com/new
-   - Select this GitHub repository
-   - Deploy akan auto-trigger
+
+    - Go to https://vercel.com/new
+    - Select this GitHub repository
+    - Deploy akan auto-trigger
 
 2. **Set Environment Variables**
-   - Go to Project Settings → Environment Variables
-   - Add all variables dari `.env.production.example`
-   - Required variables:
-     ```
-     APP_KEY, APP_NAME, APP_ENV, APP_DEBUG, APP_URL
-     CACHE_STORE, SESSION_DRIVER, LOG_CHANNEL
-     DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
-     ```
-   - Refer to `VERCEL_ENV_SETUP.md` untuk step-by-step instructions
+
+    - Go to Project Settings → Environment Variables
+    - Add all variables dari `.env.production.example`
+    - Required variables:
+        ```
+        APP_KEY, APP_NAME, APP_ENV, APP_DEBUG, APP_URL
+        CACHE_STORE, SESSION_DRIVER, LOG_CHANNEL
+        DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+        ```
+    - Refer to `VERCEL_ENV_SETUP.md` untuk step-by-step instructions
 
 3. **Verify Deployment**
-   - Check Build Logs → pastikan `npm run build` sukses
-   - Check Runtime Logs → pastikan tidak ada error 500
-   - Test: https://ceritaku-j5z5.vercel.app
+    - Check Build Logs → pastikan `npm run build` sukses
+    - Check Runtime Logs → pastikan tidak ada error 500
+    - Test: https://ceritaku-j5z5.vercel.app
 
 ### Troubleshooting
 
 Jika error 500:
+
 1. Verify APP_KEY di environment variables
 2. Check database connectivity dari Vercel logs
 3. Ensure CACHE_STORE=array (bukan database)
@@ -373,11 +400,13 @@ Jika error 500:
 - Vite build output di-commit ke `public/build/`
 - Database migrations harus sudah di-run lokal sebelum deploy
 - Jangan commit `.env` file, gunakan Vercel Environment Variables
-php artisan test tests/Feature/CerpenControllerTest.php
+  php artisan test tests/Feature/CerpenControllerTest.php
 
 # Dengan coverage report
+
 php artisan test --coverage
-```
+
+````
 
 Struktur tests:
 - `tests/Feature/` - Feature & integration tests
@@ -392,9 +421,10 @@ php artisan pail
 
 # Filter logs spesifik
 php artisan pail --filter="database"
-```
+````
 
 ### Tinker Console
+
 ```bash
 php artisan tinker
 
@@ -407,6 +437,7 @@ php artisan tinker
 ## 📦 Deployment
 
 ### Production Build
+
 ```bash
 # Install dependencies
 composer install --optimize-autoloader --no-dev
@@ -429,6 +460,7 @@ php artisan view:cache
 ```
 
 ### Docker Deployment (Laravel Sail)
+
 ```bash
 # Setup with Sail
 ./vendor/bin/sail up -d
@@ -452,6 +484,7 @@ Project ini berlisensi MIT. Lihat [LICENSE](LICENSE) untuk detail lengkap.
 ## 🙋 Support
 
 Jika ada pertanyaan atau bug, silakan:
+
 - Buka Issue di GitHub
 - Hubungi developer
 

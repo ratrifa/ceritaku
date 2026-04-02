@@ -5,6 +5,7 @@
 ### Langkah 1: Set Environment Variables (5 menit)
 
 **1. Buka link ini:**
+
 ```
 https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/environment-variables
 ```
@@ -54,6 +55,7 @@ Akses: https://ceritaku-j5z5.vercel.app
 ---
 
 **Dokumentasi lengkap:**
+
 - `DEPLOYMENT_CHECKLIST.md` - Checklist lengkap
 - `VERCEL_ENV_SETUP.md` - Guide detail
 - `README.md` - Section "Deployment (Vercel)"

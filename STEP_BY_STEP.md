@@ -10,12 +10,14 @@ Semua code sudah fix. Sekarang tinggal set environment variables.
 
 ### STEP 1: Go to Vercel Environment Variables
 
-**URL:** 
+**URL:**
+
 ```
 https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/environment-variables
 ```
 
 **What you'll see:**
+
 - Page title: "ceritaku → Settings → Environment Variables"
 - Button "Add New" on the right
 - Empty table or existing variables
@@ -34,90 +36,105 @@ https://vercel.com/satriafebri16-4096s-projects/ceritaku-j5z5/settings/environme
 6. Repeat for next variable
 
 **VARIABLE 1:**
+
 ```
 Key:   APP_NAME
 Value: CeritaKu
 ```
 
 **VARIABLE 2:**
+
 ```
 Key:   APP_ENV
 Value: production
 ```
 
 **VARIABLE 3:**
+
 ```
 Key:   APP_KEY
 Value: base64:UarCDcxnDM+cvrOIzbDentLzXIgpmCLQx/kbsu+8DH0=
 ```
 
 **VARIABLE 4:**
+
 ```
 Key:   APP_DEBUG
 Value: false
 ```
 
 **VARIABLE 5:**
+
 ```
 Key:   APP_TIMEZONE
 Value: UTC
 ```
 
 **VARIABLE 6:**
+
 ```
 Key:   APP_URL
 Value: https://ceritaku-j5z5.vercel.app
 ```
 
 **VARIABLE 7:**
+
 ```
 Key:   CACHE_STORE
 Value: array
 ```
 
 **VARIABLE 8:**
+
 ```
 Key:   SESSION_DRIVER
 Value: cookie
 ```
 
 **VARIABLE 9:**
+
 ```
 Key:   DB_CONNECTION
 Value: mysql
 ```
 
 **VARIABLE 10:**
+
 ```
 Key:   DB_HOST
 Value: gt8-yp.h.filess.io
 ```
 
 **VARIABLE 11:**
+
 ```
 Key:   DB_PORT
 Value: 61002
 ```
 
 **VARIABLE 12:**
+
 ```
 Key:   DB_DATABASE
 Value: ceritaku_sometimeon
 ```
 
 **VARIABLE 13:**
+
 ```
 Key:   DB_USERNAME
 Value: ceritaku_sometimeon
 ```
 
 **VARIABLE 14:**
+
 ```
 Key:   DB_PASSWORD
 Value: f40a903b2419886e49385b33dffa93a3222c7af8
 ```
 
 **VARIABLE 15:**
+
 ```
 Key:   LOG_CHANNEL
 Value: stderr
@@ -146,6 +163,7 @@ After setting variables, Vercel automatically starts deployment:
 5. This takes 2-3 minutes
 
 **What's happening:**
+
 - Vercel pulls latest code from GitHub
 - Runs `npm install`
 - Runs `npm run build`
@@ -183,6 +201,7 @@ Once deployment status is "Ready":
 **Cause:** Usually missing or incorrect environment variable
 
 **Fix (in order):**
+
 1. Check Vercel Environment Variables again (verify all 15 set)
 2. Check if any value is blank
 3. Verify APP_KEY = `base64:UarCDcxnDM+cvrOIzbDentLzXIgpmCLQx/kbsu+8DH0=` (don't change!)
@@ -191,12 +210,14 @@ Once deployment status is "Ready":
 ### Deployment stuck on "Building"
 
 **Fix:**
+
 1. Wait 5 more minutes (npm install can be slow)
 2. If still stuck after 10 min: Deployments → Redeploy button
 
 ### Can't find Vercel settings page
 
 **Fix:**
+
 - Make sure you're logged in to Vercel
 - Go to: vercel.com
 - Find project "ceritaku-j5z5"
@@ -209,7 +230,7 @@ Once deployment status is "Ready":
 ## ⏱️ TOTAL TIME: ~15 minutes
 
 - Adding variables: ~5 min
-- Deployment: ~3 min  
+- Deployment: ~3 min
 - Testing: ~1 min
 - **Buffer for issues: ~5 min**
 
@@ -220,6 +241,7 @@ Once deployment status is "Ready":
 When deployment is "Ready" and app works:
 
 ✅ Application is LIVE
+
 - URL: https://ceritaku-j5z5.vercel.app
 - Users can access it
 - Database connected
@@ -231,6 +253,7 @@ When deployment is "Ready" and app works:
 ## 📖 REFERENCE
 
 If stuck at any step:
+
 - DEPLOY_NOW.md - Main instructions
 - DOCS.md - Documentation index
 - DEPLOYMENT_CHECKLIST.md - Full checklist
