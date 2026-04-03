@@ -19,11 +19,10 @@
     "buildCommand": "vite build",
     "outputDirectory": "public",
     "env": {
-        "ASSET_URL": "https://ceritaku-ratrifa.vercel.app",
+        "ASSET_URL": "https://www.ratrifa.my.id",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://ceritaku-ratrifa.vercel.app",
-        "APP_KEY": "base64:bGumfr6w3W3jkO/JNZfRG3dk8Pi4C8eR4FZn7F01GR0=",
+        "APP_URL": "https://www.ratrifa.my.id",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
