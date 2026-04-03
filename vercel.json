@@ -33,11 +33,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
-        "DB_CONNECTION": "mysql",
-        "DB_HOST": "gt8-yp.h.filess.io",
-        "DB_PORT": "61002",
-        "DB_DATABASE": "ceritaku_sometimeon",
-        "DB_USERNAME": "ceritaku_sometimeon",
-        "DB_PASSWORD": "f40a903b2419886e49385b33dffa93a3222c7af8"
+        "DB_CONNECTION": "mysql"
     }
 }
